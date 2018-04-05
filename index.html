@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			margin:0px;
+			padding: 0px;
+			background-color:#FFF0F5;
+			font-family: Tahoma, Geneva, sans-serif;
+		 
+       
+		}
+		header{
+			
+			background: linear-gradient(to right,#00FA9A,#F08080,#FFF0F5);
+		}
+		nav{
+			margin: 0px;
+		}
+		
+		ul{
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+			background: #333; 
+			overflow: hidden;
+			box-shadow: 2px 2px 6px rgba(125,125,125,0.8);
+			
+		}
+		li , .drop , .tip ,.look{
+			float: left
+		}
+		li a{
+			display: block;
+			padding: 20px;
+			text-decoration: none;
+            text-align: center;
+            color: white;
+			
+
+		}
+		li a:hover:not(.active) ,.drop:hover .btn{
+			background: grey;
+		}
+		.drop{
+			display: inline-block;
+		}
+		.dropdown{
+			display: none;
+			position: absolute;
+			left:10%;
+			width: 120px;
+			background: rgba(125,125,125,0.8);
+			box-shadow: 2px 2px 8px rgba(100,100,100,0.8);
+			border-radius: 6px;
+			border:none;
+
+		}
+		.dropdown a{
+			text-decoration: none;
+			text-align: center;
+			padding: 15px;
+		
+
+		}
+		.dropdown a:hover{
+			background: grey;
+		}
+		.drop:hover .dropdown{
+			display: block;
+		}
+		.tip{
+			
+			display: inline-block;
+		}
+		.tool{
+			position: absolute;
+			top: 9%;
+			left:5%;
+			width: 80px;
+			background: #333;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			border: none;
+			border-radius: 5px;
+			visibility: hidden;
+			opacity: 0;
+			transition:  opacity 0.5s;
+
+		
+
+
+
+		}
+		.tip:hover .tool{
+
+			opacity: 1;
+			visibility: visible;
+		}
+		.tool::after{
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: transparent transparent #333 transparent;
+		}
+		.look{
+			
+
+
+		
+
+		}
+		form{
+			
+			margin-top: 10px;
+			margin-left: 100px;
+			display: inline-block;
+
+
+
+		}
+		input[type=search]{
+			width: 500px;
+			padding: 6px;
+			border:none;
+			border-radius: 6px;
+			margin: 0px;
+		}
+		button{
+			border: none;
+			border-radius: 6px;
+			margin: 0px;
+			padding: 5px 8px;
+			background: green;
+	
+
+			
+
+			}
+			button:hover{
+				cursor: pointer;
+				background: #90EE90;
+
+			}
+			.sing{
+                font-size: 18px;
+				margin: 7px;
+				padding: 5px 8px 8px 5px;
+				border:none;
+				background: green;
+				border-radius: 5px;
+				vertical-align: center;
+
+			}
+			.row{
+				
+				display: flex;
+				flex-direction: column;
+
+
+
+			}
+			.right{
+				background-image:url("img/sahara.jpeg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				text-align: center;
+				min-height: 400px;
+			    border: 3px solid green;
+			    box-shadow: 2px 2px 8px rgba(125,125,125,0.8);
+
+			
+
+			}
+			.introduction{
+
+				width: 70%;
+				margin: 80px auto;
+				
+				padding: 25px;
+				font-size: 25px;
+				
+				
+				
+				
+
+			
+			
+				
+				
+
+			}
+			.introduction a{
+				padding: 15px;
+				border: none;
+				background-color: #2E8B57;
+				font-size: 20px;
+				width: 70px;
+				text-decoration: none;
+				color: white;
+				border-radius: 10px;
+			}
+			.introduction a:hover{
+				background-color:green;
+			}
+			.left{
+				display: flex;
+				flex-direction: row;
+				
+				margin: 20px 0px;
+				background-color: 	#DCDCDC;
+
+				
+				
+			}
+			.logo{
+			    padding: 50px;
+			    border:none;
+			    box-shadow: 2px 2px 8px rgba(125,125,125,0.8);
+			    margin:20px; 
+			    background-color: 	#FFFAF0;
+			}
+			.logo i{
+				margin-left:100px ; 
+				background-color: green;
+				border: none;
+				padding: 20px;
+				border-radius: 100%;
+				font-size: 70px;
+				color: white;
+				box-shadow: 2px 2px 8px rgba(125,125,125,0.8);
+
+			}
+			.logo h3{
+				text-align: center;
+
+			}
+			.logo p{
+				text-align: center;
+				padding-bottom: 10px;
+				font-size: 18px;
+			}
+		    .logo a{
+		    	text-decoration: none;
+		    	margin: 30px 120px;
+		    	padding: 10px 18px;
+		    	border: none;
+		    	background-color: green;
+		    	color: white;
+		    	border-radius: 6px;
+
+		    }
+		    .logo a:hover{
+		    	box-shadow: 2px 2px 8px rgba(125,125,125,0.8);
+
+		    }
+		    
+
+		    
+
+		    .show{
+		    	display: flex;
+		    	margin: 20px;
+            }
+            .show img {
+            	max-width: 40%;
+            	height: 350px;
+            	border: 5px solid green;
+            	border-radius: 5px;
+            	box-shadow: 2px 2px 8px rgba(125,125,125,0.8);
+            }
+            .show .text{
+            	flex: 40%;
+            	margin-left: 17px;
+            
+            }
+            .show p{
+            	font-size: 17px;
+            	letter-spacing: 1.5px;
+            	line-height: 18px;
+            	text-indent: 20px;
+
+            	}
+            	.show p::first-letter{
+            		font-size: 25px;
+            		color: green;
+            	}
+            	.show h2{
+            		color: green;
+            		text-decoration: underline;
+            	}
+            	footer{
+            		display: flex;
+            		margin-top: 100px;
+            		background-color:#2F4F4F;
+            	}
+            	.item{
+            		flex:30%;
+            		padding: 20px;
+
+            	}
+            	.item a{
+            		display: block;
+            		text-decoration: none;
+            		padding-bottom: 10px;
+            		color: white;
+            	}
+            	.item h2{
+            		text-decoration: underline;
+            		color: green;
+            	}
+            	.item a:hover{
+            		text-decoration: underline;
+
+            	}
+            	#icon a{
+            		display: inline-block;
+            		padding: 5px 10px;
+            	}
+
+
+                .fa{
+                   font-size: 20px;
+                   
+                   border:none;
+                   border-radius: 100%;
+                 
+                }
+                .fa-facebook{
+                	 padding: 10px 15px;
+                	 background-color: #4169E1;
+                }
+               .fa-facebook:hover{
+               	background-color: 	#87CEFA
+               }
+                .fa-google{
+                	padding: 10px 12px;
+                	background-color: red;
+                }
+                .fa-google:hover{
+               	background-color: #F08080
+               }
+                .fa-twitter{
+                	padding: 10px 11px;
+                	background-color: lightblue;
+                }
+                 .fa-twitter:hover{
+               	background-color: #4169E1;
+               }
+
+
+		   
+		   
+
+
+
+
+
+        
+			@media only screen and (max-width: 1000px){
+				li  {
+					float: none;
+					width: 100%;
+
+				}
+				form{
+					margin-left: 5px;
+
+				}
+				input[type=search]{
+					width: 80%;
+				}
+
+				
+
+				
+			}
+			@media only screen and (max-width:500px){
+				.left{
+					flex-direction: column;
+				}
+				.show {
+				    flex-direction: column;
+
+				}
+				.show img{
+					max-width: 100%;
+					height: 200px;
+				}
+				
+           
+            	footer{
+            		flex-direction: column;
+            	}
+            	.item{
+            		flex: 100%;
+            	}
+            	.right a{
+            		width: 30px;
+            		padding: 4px;
+            	}
+				.logo i {
+					margin-left: 0.3em;
+				}
+				.logo a{
+					display: block;
+					width: 90%;
+					margin: auto;
+					text-align: center;
+            }
+			li a{
+				width: 100%;
+				
+			}
+			}
+
+
+	</style>
+</head>
+<body>
+	
+	<nav>
+		<ul>
+			<li><a href="" class="active" style="background: green">Home</a></li>
+			<li ><a href="" >About</a></li>
+				
+				
+			
+			<li class="drop">
+				<a href="city.html" class="btn">city</a>
+				<div class="dropdown">
+					<a href="">east</a>
+					<a href="">ouest</a>
+					<a href="">north</a>
+					
+				</div>
+
+			</li>
+			<li class="look">
+				<form>
+					<input type="search" name="search" placeholder="search...">
+					<button type="submit"><i class="fa fa-search" style="color: white;font-size: 18px;margin: 0px;"></i></button>
+				</form>
+			</li>
+			
+			<li style="float: right;"><a href="" >Login</a></li>
+			<li  style="float: right"><a href="" class="sing">singup<i class="fa fa-plus" style="margin-left: 4px;"></i></a></li>
+
+		</ul>
+     </nav>
+     <div class="row">
+     	<div class="right">
+     		<div class="introduction">
+     		<p>
+     	Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquam sequi nesciunt at minima accusamus ipsum eligendi, nobis a officiis.
+     	    </p>
+     	    <a href="">star </a>
+     	   </div>
+
+
+     	    
+
+     	</div>
+     	<div class="left">
+     		<div class="logo">
+     		
+     		<i class="fa fa-glass"></i><br>
+     		<h3>club touristique</h3>
+     		<p>you can enjoy your time with our club and hvae a a good time.</p>
+     		<a href="">View</a>
+     		</div>
+
+     		<div class="logo">
+     		
+     		<i class="fa fa-hotel" ></i><br>
+     		<h3>club touristique</h3>
+     		<p>you can enjoy your time with our club and hvae a a good time.</p>
+     		<a href="">View</a>
+     		</div>
+     		<div class="logo">
+     		
+     		<i class="fa fa-paper-plane"></i><br>
+     		<h3>club touristique</h3>
+     		<p>you can enjoy your time with our club and hvae a a good time.</p>
+     		<a href="">View</a>
+     		</div>
+     		
+     
+
+     	</div>
+     	
+     </div>
+   
+     	<div class="show">
+        
+     	<img src="2016_01.jpg">
+
+        <div class="text">
+        	<h2>Constantine</h2>
+     	<p>Je vous propose ici une page évolutive. En effet j'y placerai chaque mois une nouvelle photo. Cette image présentera Constantine de façon originale, insolite ou artistique. Le choix de ces documents sera totalement subjectif, et je me laisse la liberté de choisir en fonction de mes propres goûts.
+
+       Donc n'hésitez pas à me faire parvenir vos clichés (même anciens). Je vous préviens tout de suite qu'il n'y a rien à gagner, si ce n'est l'admiration des visiteurs.
+
+        Cliquez sur les images pour les agrandir.
+
+ 
+   
+      </p>
+      </div>
+      
+      </div>
+      	<div class="show">
+        
+     	<img src="ALger9.jpg">
+        <div class="text">
+        	<h2>alger</h2>
+     	<p>Je vous propose ici une page évolutive. En effet j'y placerai chaque mois une nouvelle photo. Cette image présentera Constantine de façon originale, insolite ou artistique. Le choix de ces documents sera totalement subjectif, et je me laisse la liberté de choisir en fonction de mes propres goûts.
+
+       Donc n'hésitez pas à me faire parvenir vos clichés (même anciens). Je vous préviens tout de suite qu'il n'y a rien à gagner, si ce n'est l'admiration des visiteurs.
+
+        Cliquez sur les images pour les agrandir.
+
+ 
+   
+      </p>
+      </div>
+      </div>
+      	<div class="show">
+       
+     	<img src="AB.jpg">
+        <div class="text">
+        	<h2>oran</h2>
+        
+     	<p>Je vous propose ici une page évolutive. En effet j'y placerai chaque mois une nouvelle photo. Cette image présentera Constantine de façon originale, insolite ou artistique. Le choix de ces documents sera totalement subjectif, et je me laisse la liberté de choisir en fonction de mes propres goûts.
+
+       Donc n'hésitez pas à me faire parvenir vos clichés (même anciens). Je vous préviens tout de suite qu'il n'y a rien à gagner, si ce n'est l'admiration des visiteurs.
+
+        Cliquez sur les images pour les agrandir.
+
+ 
+   
+      </p>
+     </div>
+     </div>
+      <footer>
+      	<div class="item">
+      		<h2>About</h2>
+      		<a href="">how are we</a>
+      		<a href="">location</a>
+      		<a href="">certificate</a>
+      		<a href="">our company</a>
+      		
+      	</div>
+      	<div class="item">
+      		<h2>our services</h2>
+      		<a href="">Hotel</a>
+      		<a href="">assistan</a>
+      		<a href="">club</a>
+      		<a href="">agency</a>
+      		<a href="">guide</a>
+      	</div>
+      	<div class="item " id="icon">
+      		<h2>contact</h2>
+      		<p>Email:seifwin74@gmail.com</p>
+      		<a href="" title="facebook"><i class="fa fa-facebook"></i></a>
+      		<a href="" title="googl"><i class="fa fa-google"></i></a>
+      		<a href="" title="twitter"><i class="fa fa-twitter"></i></a>
+      		<p style="font-size: 20px;">all right reserverd @copyright</p>
+      	</div>
+      </footer>
+     
+       
+    
+</body>
+</html>

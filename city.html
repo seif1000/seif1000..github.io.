@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			margin:0px;
+			padding: 0px;
+			background-color:#FFF0F5;
+			font-family: Tahoma, Geneva, sans-serif;
+		 
+       
+		}
+		header{
+			
+			background: linear-gradient(to right,#00FA9A,#F08080,#FFF0F5);
+		}
+		nav{
+			margin: 0px;
+		}
+		
+		nav ul{
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+			background: #333; 
+			overflow: hidden;
+			box-shadow: 2px 2px 6px rgba(125,125,125,0.8);
+			
+		}
+		li , .drop , .tip ,.look{
+			float: left
+		}
+		nav li a{
+			display: block;
+			padding: 20px;
+			text-decoration: none;
+            text-align: center;
+            color: white;
+			
+
+		}
+		nav li a:hover:not(.active) ,.drop:hover .btn{
+			background: grey;
+		}
+		.drop{
+			display: inline-block;
+		}
+		.dropdown{
+			display: none;
+			position: absolute;
+			left:10%;
+			width: 120px;
+			background: rgba(125,125,125,0.8);
+			box-shadow: 2px 2px 8px rgba(100,100,100,0.8);
+			border-radius: 6px;
+			border:none;
+
+		}
+		.dropdown a{
+			text-decoration: none;
+			text-align: center;
+			padding: 15px;
+		
+
+		}
+		.dropdown a:hover{
+			background: grey;
+		}
+		.drop:hover .dropdown{
+			display: block;
+		}
+		form{
+			
+			margin-top: 10px;
+			margin-left: 100px;
+			display: inline-block;
+
+
+
+		}
+		input[type=search]{
+			width: 500px;
+			padding: 6px;
+			border:none;
+			border-radius: 6px;
+			margin: 0px;
+		}
+		button{
+			border: none;
+			border-radius: 6px;
+			margin: 0px;
+			padding: 5px 8px;
+			background: green;
+	
+
+			
+
+			}
+			button:hover{
+				cursor: pointer;
+				background: #90EE90;
+
+			}
+			.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+			[class*="col-"] {
+            float: left;
+            padding: 15px;
+           }
+
+    .pran{
+    	
+    	margin-left: -10px;
+    }
+     .pran img{
+     	width: 100%;
+     }
+     .menu a{
+     	display: block;
+     	margin: 10px;
+     	border: none;
+     	padding: 10px;
+     	text-decoration: none;
+     	background-color: 	#32CD32;
+     	
+     	color:white;
+     	box-shadow:  2px 2px 8px rgba(100,100,100,0.8);
+
+     }
+     .menu a:hover{
+     	background-color: green;
+     	transform: translate(10px,0px);
+
+
+     }
+     .quest{
+     	margin-top: 50px;
+     	border:none;
+     	padding: 5px;
+     	text-align: center;
+     	border-radius: 7px;
+     	box-shadow:  2px 2px 8px rgba(100,100,100,0.8);
+
+
+     }
+     .quest h3{
+     	color:green;
+     	text-decoration: underline;
+     }
+     .menu i{
+     	float: right;
+     	font-size: 20px;
+     }
+
+     [class*="col-"] {
+     			width: 100%;
+     		}
+    
+     		
+     
+    
+footer{
+            		display: flex;
+            		margin-top: 100px;
+            		background-color:#2F4F4F;
+            	}
+            	.item{
+            		flex:30%;
+            		padding: 20px;
+
+            	}
+            	.item a{
+            		display: block;
+            		text-decoration: none;
+            		padding-bottom: 10px;
+            		color: white;
+            	}
+            	.item h2{
+            		text-decoration: underline;
+            		color: green;
+            	}
+            	.item a:hover{
+            		text-decoration: underline;
+
+            	}
+            	#icon a{
+            		display: inline-block;
+            		padding: 5px 10px;
+            	}
+
+
+                .fa{
+                   font-size: 20px;
+                   
+                   border:none;
+                   border-radius: 100%;
+                 
+                }
+                .fa-facebook{
+                	 padding: 10px 15px;
+                	 background-color: #4169E1;
+                }
+               .fa-facebook:hover{
+               	background-color: 	#87CEFA
+               }
+                .fa-google{
+                	padding: 10px 12px;
+                	background-color: red;
+                }
+                .fa-google:hover{
+               	background-color: #F08080
+               }
+                .fa-twitter{
+                	padding: 10px 11px;
+                	background-color: lightblue;
+                }
+                 .fa-twitter:hover{
+               	background-color: #4169E1;
+               }
+
+             @media only screen and (max-width:500px){
+            	footer{
+            		flex-direction: column;
+            	}
+            	.item{
+            		flex: 100%;
+            	}
+            	.right a{
+            		width: 30px;
+            		padding: 4px;
+            	}
+            }
+            @media only screen and (max-width: 1000px){
+				li  {
+					float: none;
+					width: 100%;
+
+				}
+				form{
+					margin-left: 5px;
+
+				}
+				input[type=search]{
+					width: 80%;
+				}}
+				@media only screen and  (min-width: 600px) {
+         .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+     }
+   
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+     
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="" class="active" style="background: green">Home</a></li>
+			<li ><a href="" >About</a></li>
+				
+				
+			
+			<li class="drop">
+				<a href="" class="btn">Profile</a>
+				<div class="dropdown">
+					<a href="">Dashboard</a>
+					<a href="">Cours</a>
+					<a href="">Blog</a>
+					
+				</div>
+
+			</li>
+			<li class="look">
+				<form>
+					<input type="search" name="search" placeholder="search...">
+					<button type="submit"><i class="fa fa-search" style="color: white;font-size: 18px;margin: 0px;"></i></button>
+				</form>
+			</li>
+			
+			<li style="float: right;"><a href="" >Login</a></li>
+			<li  style="float: right"><a href="" class="sing">singup<i class="fa fa-plus" style="margin-left: 4px;"></i></a></li>
+
+		</ul>
+     </nav>
+     <div class="row">
+     	<div class="col-3 col-m-3 menu">
+     		
+     		
+            <a href="">Hotel <i class="fa fa-hotel"></i></a>
+     		<a href="">Restaurent<i class="fa fa-spoon"></i></a>
+     		<a href="">coofe <i class="	fa fa-coffee"></i></a>
+     		<a href="">mesuem <i class="fa fa-university"></i></a>
+     		<a href="">garden <i class="fa fa-tree"></i></a>
+     		<a href="">stad <i class="fa fa-flag-checkered"></i></a>
+     		<a href="">mitro stations <i class="fa fa-subway"></i></a>
+     		<a href="">arts <i class="fa fa-film"></i></a>
+     		<a href="">club sport <i class="fa fa-soccer-ball-o"></i></a>
+     		<a href="">traddition <i class="fa fa-puzzle-piece"></i>	</a>
+     		<a href="">history <i class="	fa fa-shield	"></i></a>
+     	
+     		
+     	</div>
+     	<div class="col-6 col-m-9 pran">
+     		<h2>constantine</h2>
+     		<p>let's descover algeria with us the contant countrey with one visa you can visit the beatch the montaine and the desert 
+     		for more information we invite the sing up with us and discover our services 
+     		we with our service you can make resarvation and get and discover all wilaya and get a guid when you get
+           </p>
+           <img src="img/2016_01.jpg">
+     		
+     	</div>
+     	<div class="col-3 col-m-12 quest">
+     	<h3>Aliac</h3>
+     	
+     	<p>the bridg town</p>
+     	<h3> location</h3>
+     	<p>east algeria</p>
+     	<h3>population</h3>
+     	<p>12766890</p>
+     	<h3> surface</h3>
+     	<p>128700</p>
+     		
+     	
+     </div>
+ </div>
+<footer>
+      	<div class="item">
+      		<h2>About</h2>
+      		<a href="">how are we</a>
+      		<a href="">location</a>
+      		<a href="">certificate</a>
+      		<a href="">our company</a>
+      		
+      	</div>
+      	<div class="item">
+      		<h2>our services</h2>
+      		<a href="">Hotel</a>
+      		<a href="">assistan</a>
+      		<a href="">club</a>
+      		<a href="">agency</a>
+      		<a href="">guide</a>
+      	</div>
+      	<div class="item " id="icon">
+      		<h2>contact</h2>
+      		<p>Email:seifwin74@gmail.com</p>
+      		<a href="" title="facebook"><i class="fa fa-facebook"></i></a>
+      		<a href="" title="googl"><i class="fa fa-google"></i></a>
+      		<a href="" title="twitter"><i class="fa fa-twitter"></i></a>
+      		<p style="font-size: 20px;">all right reserverd @copyright</p>
+      	</div>
+      </footer>
+
+
+</body>
+</html>
